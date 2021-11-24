@@ -2,13 +2,23 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
-//this is a component function so must be Capitalized
- function Greeting() {
-    return <h4>This is Anita and this is my first component</h4>;
- }
+// stateless functional component
+// always return JSX
 
-// looks for 2 things: what is being rendered 
-//and where it is to be rendered.
- ReactDom.render(< Greeting />, document.getElementById('root')
- );
+function Greeting() {
+  return <h4>This is Anita and this is my first component</h4>
+}
 
+const Hello = () => {
+  return React.createElement(
+    'div',
+    {},
+    React.createElement('h4', {}, 'hello world')
+  )
+}
+
+ReactDom.render(<Hello />, document.getElementById('root'))
+
+// comment out one of the renders to see the change in the browser
+
+ReactDom.render(<Greeting />, document.getElementById('root'))
