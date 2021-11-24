@@ -25,6 +25,7 @@ function Greeting() {
     </section>
   )
 }
+// or
 
 const Hello = () => {
   return React.createElement(
@@ -34,8 +35,23 @@ const Hello = () => {
   )
 }
 
-// comment out one of the renders to see the change in the browser
+// Nested Components, React Tools
 
-ReactDom.render(<Hello />, document.getElementById('root'))
+function Saying() {
+  return (
+    <div>
+      <Person />
+      <Message />
+    </div>
+  )
+}
 
-ReactDom.render(<Greeting />, document.getElementById('root'))
+const Person = () => <h2>anita wright</h2>
+const Message = () => {
+  return <p>this is my message</p>
+}
+// comment out the renders that don't go with the function chosen above to see the result in the browser.
+
+//ReactDom.render(<Hello />, document.getElementById('root'))
+ReactDom.render(<Saying />, document.getElementById('root'))
+//ReactDom.render(<Greeting />, document.getElementById('root'))
