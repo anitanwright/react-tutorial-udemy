@@ -86,8 +86,12 @@ const Image = () => (
     alt='Diary of a Wimpy Kid'
   />
 )
-const Title = () => <h3>Diary of a Wimpy Kid</h3>
-const Author = () => <h3>Sum Dood</h3>
+const Title = () => <h2>Diary of a Wimpy Kid</h2>
+const Author = () => (
+  <h3 style={{ color: '#617d98', fontSize: '0.75rem', marginTop: '0.25rem' }}>
+    Sum Dood
+  </h3>
+)
 
 // comment out the renders that don't go with the function chosen above to see the result in the browser.
 
