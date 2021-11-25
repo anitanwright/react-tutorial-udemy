@@ -84,14 +84,15 @@ function BookList() {
     </section>
   )
 }
-
-const Book = (props) => {
-  console.log(props)
+// props deconstructored you can use either method
+const Book = ({ img, title, author }) => {
+  //or use the one below
+  //const { img, title, author } = props
   return (
     <article className='book'>
-      <img src={props.img} alt='' />
-      <h1>{props.title}</h1>
-      <h3>{props.author}</h3>
+      <img src={img} alt='' />
+      <h1>{title}</h1>
+      <h3>{author}</h3>
     </article>
   )
 }
