@@ -58,40 +58,28 @@ function BookList() {
   return (
     <section className='booklist'>
       <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
     </section>
   )
 }
 
 // Book component has Image, Title, and Author components nested within.
+const author = 'Sum Dood'
 const Book = () => {
+  const title = 'Diary of a Wimpy Kid'
   return (
     <article className='book'>
-      {' '}
-      <Title />
-      by <Author />
-      <Image />
+      <img
+        src='https://images-na.ssl-images-amazon.com/images/I/51Ua3JTN8iS._SY291_BO1,204,203,200_QL40_FMwebp_.jpg'
+        eslint-disable-next-line
+        no-undef
+        alt='Diary of a Wimpy Kid'
+      />
+      <h1>{title}</h1>
+      <h3>{author.toUpperCase()}</h3>
+      <p></p>
     </article>
   )
 }
-const Image = () => (
-  <img
-    src='https://images-na.ssl-images-amazon.com/images/I/51Ua3JTN8iS._SY291_BO1,204,203,200_QL40_FMwebp_.jpg'
-    eslint-disable-next-line
-    no-undef
-    alt='Diary of a Wimpy Kid'
-  />
-)
-const Title = () => <h2>Diary of a Wimpy Kid</h2>
-const Author = () => (
-  <h3 style={{ color: '#617d98', fontSize: '0.75rem', marginTop: '0.25rem' }}>
-    Sum Dood
-  </h3>
-)
 
 // comment out the renders that don't go with the function chosen above to see the result in the browser.
 
