@@ -67,20 +67,31 @@ const books = [
     title: 'If Animals Kissed Goodnight',
     author: 'Ann Whitford Paul, David Walker',
   },
+  {
+    img: 'https://images-na.ssl-images-amazon.com/images/I/41w4B0f21VL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
+    title: 'The Very Hungry Caterpillar',
+    author: 'Eric Carle',
+  },
+  {
+    img: 'https://m.media-amazon.com/images/I/61zGOvBSgAL._AC_UY436_FMwebp_QL65_.jpg',
+    title: 'Where the Wild Things Are',
+    author: 'Maurice Sendak',
+  },
 ]
 
-const names = ['john', 'peter', 'susan']
-// eslint-disable-next-line array-callback-return
-const newNames = names.map((name) => {
-  return <h1>{name}</h1>
-})
-console.log(newNames)
 function BookList() {
-  return <section className='booklist'>{newNames}</section>
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        const { img, title, author } = book
+        return <Book book={book}></Book>
+      })}
+    </section>
+  )
 }
 // props deconstructored you can use either method
 const Book = (props) => {
-  const { img, title, author } = props
+  const { img, title, author } = props.book
   return (
     <article className='book'>
       <img src={img} alt='' />
