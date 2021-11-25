@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import ReactDom from 'react-dom'
+import './index.css'
 
 //JSX RULES
 //return single element
@@ -55,7 +56,12 @@ const Message = () => {
 // renders Book component which includes the additional 3 nested within
 function BookList() {
   return (
-    <section>
+    <section className='booklist'>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
       <Book />
     </section>
   )
@@ -64,7 +70,7 @@ function BookList() {
 // Book component has Image, Title, and Author components nested within.
 const Book = () => {
   return (
-    <article>
+    <article className='book'>
       {' '}
       <Title />
       by <Author />
