@@ -75,7 +75,15 @@ function BookList() {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
-      />
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, vero
+          dicta? Delectus laudantium quae nisi amet dicta deserunt modi.
+          Pariatur ut debitis quae doloribus veritatis harum? Alias tempora
+          dolorum mollitia!
+        </p>
+      </Book>
+
       <Book
         img={secondBook.img}
         title={secondBook.title}
@@ -85,14 +93,14 @@ function BookList() {
   )
 }
 // props deconstructored you can use either method
-const Book = ({ img, title, author }) => {
-  //or use the one below
-  //const { img, title, author } = props
+const Book = (props) => {
+  const { img, title, author, children } = props
   return (
     <article className='book'>
       <img src={img} alt='' />
       <h1>{title}</h1>
       <h3>{author}</h3>
+      {props.children}
     </article>
   )
 }
