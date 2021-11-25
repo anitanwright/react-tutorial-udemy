@@ -57,22 +57,30 @@ const Message = () => {
 //setup vars
 const books = [
   {
+    id: 1,
+
     img: 'https://images-na.ssl-images-amazon.com/images/I/51Ua3JTN8iS._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
     title: 'Diary of a Wimpy Kid',
     author: 'Sum Dood',
   },
 
   {
+    id: 2,
+
     img: 'https://images-na.ssl-images-amazon.com/images/I/51PRQuO-xjL._AC_SX368_.jpg',
     title: 'If Animals Kissed Goodnight',
     author: 'Ann Whitford Paul, David Walker',
   },
   {
+    id: 4,
+
     img: 'https://images-na.ssl-images-amazon.com/images/I/41w4B0f21VL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
     title: 'The Very Hungry Caterpillar',
     author: 'Eric Carle',
   },
   {
+    id: 3,
+
     img: 'https://m.media-amazon.com/images/I/61zGOvBSgAL._AC_UY436_FMwebp_QL65_.jpg',
     title: 'Where the Wild Things Are',
     author: 'Maurice Sendak',
@@ -82,16 +90,16 @@ const books = [
 function BookList() {
   return (
     <section className='booklist'>
-      {books.map((book) => {
+      {books.map((book, index) => {
         const { img, title, author } = book
-        return <Book book={book}></Book>
+        //spread operator
+        return <Book key={book.id} {...book}></Book>
       })}
     </section>
   )
 }
 // props deconstructored you can use either method
-const Book = (props) => {
-  const { img, title, author } = props.book
+const Book = ({ img, title, author }) => {
   return (
     <article className='book'>
       <img src={img} alt='' />
