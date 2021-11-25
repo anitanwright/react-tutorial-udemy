@@ -98,13 +98,19 @@ function BookList() {
     </section>
   )
 }
-// props deconstructored you can use either method
 const Book = ({ img, title, author }) => {
+  // attribute, eventHandler
+  //onClick, onMouseOver
+  const clickHandler = () => {
+    alert('Hello World')
+  }
   return (
     <article className='book'>
       <img src={img} alt='' />
-      <h1>{title}</h1>
+      <h1 onClick={() => console.log(title)}>{title}</h1>
       <h3>{author}</h3>
+      <button type='button' onClick={clickHandler}></button>
+      <button type='button'></button>
     </article>
   )
 }
