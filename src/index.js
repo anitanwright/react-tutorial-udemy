@@ -55,52 +55,37 @@ const Message = () => {
 // Booklist Mini Project
 
 //setup vars
+const books = [
+  {
+    img: 'https://images-na.ssl-images-amazon.com/images/I/51Ua3JTN8iS._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
+    title: 'Diary of a Wimpy Kid',
+    author: 'Sum Dood',
+  },
 
-const firstBook = {
-  img: 'https://images-na.ssl-images-amazon.com/images/I/51Ua3JTN8iS._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
-  title: 'Diary of a Wimpy Kid',
-  author: 'Sum Dood',
-}
+  {
+    img: 'https://images-na.ssl-images-amazon.com/images/I/51PRQuO-xjL._AC_SX368_.jpg',
+    title: 'If Animals Kissed Goodnight',
+    author: 'Ann Whitford Paul, David Walker',
+  },
+]
 
-const secondBook = {
-  img: 'https://images-na.ssl-images-amazon.com/images/I/51PRQuO-xjL._AC_SX368_.jpg',
-  title: 'If Animals Kissed Goodnight',
-  author: 'Ann Whitford Paul, David Walker',
-}
-
+const names = ['john', 'peter', 'susan']
+// eslint-disable-next-line array-callback-return
+const newNames = names.map((name) => {
+  return <h1>{name}</h1>
+})
+console.log(newNames)
 function BookList() {
-  return (
-    <section className='booklist'>
-      <Book
-        img={firstBook.img}
-        title={firstBook.title}
-        author={firstBook.author}
-      >
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, vero
-          dicta? Delectus laudantium quae nisi amet dicta deserunt modi.
-          Pariatur ut debitis quae doloribus veritatis harum? Alias tempora
-          dolorum mollitia!
-        </p>
-      </Book>
-
-      <Book
-        img={secondBook.img}
-        title={secondBook.title}
-        author={secondBook.author}
-      />
-    </section>
-  )
+  return <section className='booklist'>{newNames}</section>
 }
 // props deconstructored you can use either method
 const Book = (props) => {
-  const { img, title, author, children } = props
+  const { img, title, author } = props
   return (
     <article className='book'>
       <img src={img} alt='' />
       <h1>{title}</h1>
       <h3>{author}</h3>
-      {props.children}
     </article>
   )
 }
